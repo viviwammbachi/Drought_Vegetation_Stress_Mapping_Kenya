@@ -1,0 +1,305 @@
+ARCMAP PROCESSING NOTES - PROJECT 6
+
+Project Title:
+Drought and Vegetation Stress Mapping in Kenya Using CHIRPS Rainfall and Sentinel-2 NDVI
+
+Prepared by:
+Vivian Mbachi
+
+Software Used:
+ArcMap 10.8
+
+Date:
+15 May 2026
+
+Purpose of ArcMap Processing:
+The exported Google Earth Engine raster files were opened in ArcMap for desktop GIS validation, symbology styling, and preparation for final map layout production.
+
+Input Folder:
+1_Data_Raw
+
+Input Raster Files:
+1. Drought_Stress_CHIRPS_NDVI_Kenya_2023.tif
+2. Precipitation_CHIRPS_Class_Kenya_2023.tif
+3. Vegetation_NDVI_Stress_Class_Kenya_2023.tif
+
+Coordinate System:
+WGS 84
+
+EPSG Code:
+EPSG:4326
+
+Processing and Styling Completed:
+
+1. Drought Stress Raster
+File:
+Drought_Stress_CHIRPS_NDVI_Kenya_2023.tif
+
+Issue Found:
+The raster initially displayed with a black background outside Kenya.
+
+Correction Made:
+Value 0 was hidden or removed from the display because it represented the background outside the Kenya study area.
+
+Final Class Labels:
+1 - Very High Drought Stress Priority
+2 - High Drought Stress Priority
+3 - Moderate Drought Stress Priority
+4 - Low Drought Stress Priority
+5 - Very Low Drought Stress Priority
+
+Final Color Meaning:
+Red - Very high priority
+Orange - High priority
+Yellow - Moderate priority
+Light green - Low priority
+Dark green - Very low priority
+
+2. CHIRPS Rainfall Class Raster
+File:
+Precipitation_CHIRPS_Class_Kenya_2023.tif
+
+Correction Made:
+Value 0 was hidden or removed from the display because it represented the background outside Kenya.
+
+Final Class Labels:
+1 - Very Low Rainfall
+2 - Low Rainfall
+3 - Moderate Rainfall
+4 - High Rainfall
+5 - Very High Rainfall
+
+3. NDVI Vegetation Stress Raster
+File:
+Vegetation_NDVI_Stress_Class_Kenya_2023.tif
+
+Correction Made:
+Value 0 was hidden or removed from the display because it represented the background outside Kenya.
+
+Final Class Labels:
+1 - Very Low Vegetation
+2 - Low Vegetation
+3 - Moderate Vegetation
+4 - Healthy Vegetation
+5 - Very Healthy Vegetation
+
+Final Color Meaning:
+Brown - Very low vegetation
+Orange - Low vegetation
+Yellow - Moderate vegetation
+Light green - Healthy vegetation
+Dark green - Very healthy vegetation
+
+ArcMap Document Saved As:
+ArcMap_Project_6_Drought_Vegetation_Stress_Kenya.mxd
+
+ArcMap Document Folder:
+6_Output
+
+Notes:
+The three raster layers opened successfully in ArcMap.
+The raster background value 0 was treated as non-analysis background.
+All three raster layers were styled with meaningful class labels.
+The ArcMap document was saved after styling.
+
+
+
+ MAP EXPORT ENTRY 1
+
+Map Title:
+Drought Stress Priority in Kenya, 2023
+
+Exported File Name:
+Map_1_Drought_Stress_Priority_Kenya_2023.png
+
+Output Folder:
+5_Maps
+
+Software Used:
+ArcMap 10.8
+
+Export Format:
+PNG
+
+Export Resolution:
+300 dpi
+
+Main Layer Used:
+Drought_Stress_CHIRPS_NDVI_Kenya_2023.tif
+
+Map Elements Included:
+1. Title
+2. Drought stress priority raster
+3. Legend
+4. North arrow
+5. Scale bar
+6. Data source and prepared-by note
+
+Legend Classes:
+Very High
+High
+Moderate
+Low
+Very Low
+
+Data Sources:
+CHIRPS Daily Precipitation
+Sentinel-2 Surface Reflectance
+FAO GAUL Boundaries
+
+Prepared by:
+Vivian Mbachi
+
+Status:
+Map 1 exported successfully.
+
+
+
+MAP EXPORT ENTRY 2
+
+Map Title:
+CHIRPS Rainfall Classes in Kenya, 2023
+
+Exported File Name:
+Map_2_CHIRPS_Rainfall_Classes_Kenya_2023.png
+
+Output Folder:
+5_Maps
+
+Software Used:
+ArcMap 10.8
+
+Export Format:
+PNG
+
+Export Resolution:
+300 dpi
+
+Main Layer Used:
+Precipitation_CHIRPS_Class_Kenya_2023.tif
+
+Map Elements Included:
+1. Title
+2. CHIRPS rainfall class raster
+3. Legend
+4. North arrow
+5. Scale bar
+6. Data source and prepared-by note
+
+Legend Classes:
+Very Low Rainfall
+Low Rainfall
+Moderate Rainfall
+High Rainfall
+Very High Rainfall
+
+Data Sources:
+CHIRPS Daily Precipitation
+FAO GAUL Boundaries
+
+Prepared by:
+Vivian Mbachi
+
+Status:
+Map 2 exported successfully.
+
+MAP EXPORT ENTRY 3
+
+Map Title:
+NDVI Vegetation Stress in Kenya, 2023
+
+Exported File Name:
+Map_3_NDVI_Vegetation_Stress_Kenya_2023.png
+
+Output Folder:
+5_Maps
+
+Software Used:
+ArcMap 10.8
+
+Export Format:
+PNG
+
+Export Resolution:
+300 dpi
+
+Main Layer Used:
+Vegetation_NDVI_Stress_Class_Kenya_2023.tif
+
+Map Elements Included:
+1. Title
+2. NDVI vegetation stress raster
+3. Legend
+4. North arrow
+5. Scale bar
+6. Data source and prepared-by note
+
+Legend Classes:
+Very Low Vegetation
+Low Vegetation
+Moderate Vegetation
+Healthy Vegetation
+Very Healthy Vegetation
+
+Data Sources:
+Sentinel-2 Surface Reflectance
+FAO GAUL Boundaries
+
+Prepared by:
+Vivian Mbachi
+
+Status:
+Map 3 exported successfully.
+
+MAP EXPORT ENTRY 4
+
+Map Title:
+Rainfall, Vegetation, and Drought Stress Comparison in Kenya, 2023
+
+Exported File Name:
+Map_4_Rainfall_NDVI_Drought_Comparison_Kenya_2023.png
+
+Output Folder:
+5_Maps
+
+Software Used:
+ArcMap 10.8
+
+Export Format:
+PNG
+
+Export Resolution:
+300 dpi
+
+Main Layers Used:
+1. Precipitation_CHIRPS_Class_Kenya_2023.tif
+2. Vegetation_NDVI_Stress_Class_Kenya_2023.tif
+3. Drought_Stress_CHIRPS_NDVI_Kenya_2023.tif
+
+Map Elements Included:
+1. Main title
+2. Rainfall comparison panel
+3. NDVI vegetation condition comparison panel
+4. Drought stress priority comparison panel
+5. Panel labels
+6. Interpretation note
+7. Data source and prepared-by note
+
+Panel Labels:
+Rainfall Classes
+NDVI Vegetation Condition
+Drought Stress Priority
+
+Interpretation Note:
+Areas with low rainfall and weak vegetation generally show higher drought stress priority.
+
+Data Sources:
+CHIRPS Daily Precipitation
+Sentinel-2 Surface Reflectance
+FAO GAUL Boundaries
+
+Prepared by:
+Vivian Mbachi
+
+Status:
+Map 4 exported successfully.

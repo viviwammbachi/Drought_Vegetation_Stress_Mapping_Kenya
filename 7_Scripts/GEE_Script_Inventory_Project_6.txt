@@ -1,0 +1,169 @@
+GOOGLE EARTH ENGINE SCRIPT INVENTORY
+
+Script Name:
+Project_6_GEE_Setup_Kenya
+
+Purpose:
+Initial Google Earth Engine setup script for Project 6. It centers the map on Kenya and confirms that the Code Editor is working.
+
+Platform:
+Google Earth Engine Code Editor
+
+Google Cloud Project:
+Drought-Vegetation-Kenya
+
+Study Area:
+Kenya / East Africa
+
+Date Created:
+15 May 2026
+
+Prepared by:
+Vivian Mbachi
+
+Current Status:
+Script created, saved, and tested successfully.
+
+Test Result:
+The map successfully centered on Kenya / East Africa.
+The Console displayed the setup completion message.
+
+Notes:
+This is the first Google Earth Engine script created for the drought and vegetation stress mapping project.
+Future scripts will load Kenya boundaries, Sentinel-2 imagery, CHIRPS rainfall data, NDVI layers, and export outputs for QGIS or ArcMap.
+
+
+SCRIPT UPDATE 1
+
+Update Name:
+Added Kenya Boundary
+
+Dataset Used:
+FAO GAUL 2015 Level 0 Country Boundaries
+
+Earth Engine Dataset ID:
+FAO/GAUL/2015/level0
+
+Purpose:
+Loaded Kenya boundary to define the project study area.
+
+Processing Done:
+Filtered the global country boundary dataset using ADM0_NAME = Kenya.
+
+Status:
+Kenya boundary displayed successfully in Google Earth Engine.
+
+Date Updated:
+15 May 2026
+
+
+SCRIPT UPDATE 2
+
+Update Name:
+Added Kenya Administrative Boundaries
+
+Dataset Used:
+FAO GAUL 2015 Level 1 Administrative Boundaries
+
+Earth Engine Dataset ID:
+FAO/GAUL/2015/level1
+
+Purpose:
+Loaded Kenya internal administrative boundaries to support regional rainfall and vegetation stress analysis.
+
+Processing Done:
+Filtered the FAO GAUL Level 1 dataset where ADM0_NAME equals Kenya.
+Displayed national boundary and internal administrative boundaries as clean outline layers.
+
+Status:
+Pending visual confirmation in Google Earth Engine.
+
+Date Updated:
+15 May 2026
+
+
+SCRIPT UPDATE 3
+
+Update Name:
+Loaded CHIRPS Rainfall Data for Kenya 2023
+
+Dataset Used:
+CHIRPS Daily Precipitation Data
+
+Earth Engine Dataset ID:
+UCSB-CHG/CHIRPS/DAILY
+
+Purpose:
+Loaded and summed daily rainfall data to create an annual rainfall layer for Kenya for 2023.
+
+Processing Done:
+Filtered CHIRPS daily rainfall data from 2023-01-01 to 2023-12-31.
+Summed daily rainfall values to create annual rainfall.
+Clipped rainfall raster to Kenya boundary.
+Displayed rainfall layer with Kenya national and administrative boundaries.
+
+Status:
+Pending visual confirmation in Google Earth Engine.
+
+Date Updated:
+15 May 2026
+
+SCRIPT UPDATE 4
+
+Update Name:
+Loaded Sentinel-2 Imagery and Calculated NDVI for Kenya 2023
+
+Dataset Used:
+Sentinel-2 Surface Reflectance Harmonized
+
+Earth Engine Dataset ID:
+COPERNICUS/S2_SR_HARMONIZED
+
+Purpose:
+Loaded Sentinel-2 imagery and calculated NDVI to assess vegetation health across Kenya.
+
+Processing Done:
+Filtered Sentinel-2 imagery to Kenya.
+Filtered imagery from 2023-01-01 to 2023-12-31.
+Filtered images with cloud cover less than 20 percent.
+Created a median composite image.
+Calculated NDVI using Sentinel-2 Band 8 and Band 4.
+Clipped NDVI raster to Kenya boundary.
+Displayed NDVI with Kenya national and administrative boundaries.
+
+Status:
+Pending visual confirmation in Google Earth Engine.
+
+Date Updated:
+15 May 2026
+
+
+SCRIPT UPDATE 5
+
+Update Name:
+Classified NDVI into Vegetation Stress Classes
+
+Dataset Used:
+Sentinel-2 Surface Reflectance Harmonized
+
+Earth Engine Dataset ID:
+COPERNICUS/S2_SR_HARMONIZED
+
+Purpose:
+Converted raw NDVI values into simple vegetation stress classes for easier interpretation.
+
+Processing Done:
+Calculated NDVI from Sentinel-2 Band 8 and Band 4.
+Reclassified NDVI into five vegetation stress classes:
+Class 1: Very low vegetation / severe stress
+Class 2: Low vegetation / moderate stress
+Class 3: Moderate vegetation
+Class 4: Healthy vegetation
+Class 5: Very healthy vegetation
+Displayed the classified NDVI layer with Kenya boundaries.
+
+Status:
+Pending visual confirmation in Google Earth Engine.
+
+Date Updated:
+15 May 2026

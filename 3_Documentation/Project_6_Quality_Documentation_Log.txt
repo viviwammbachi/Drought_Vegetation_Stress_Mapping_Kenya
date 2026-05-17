@@ -1,0 +1,497 @@
+PROJECT 6 QUALITY DOCUMENTATION LOG
+
+Project Title:
+Drought and Vegetation Stress Mapping in Kenya Using CHIRPS Rainfall and Sentinel-2 NDVI
+
+Project Owner:
+Vivian Mbachi
+
+Study Area:
+Kenya, with focus on drought-prone and climate-sensitive areas.
+
+Main Data Sources Planned:
+1. Google Earth Engine
+2. CHIRPS Precipitation Data
+3. Sentinel-2 Satellite Imagery
+4. NASA POWER, optional
+
+Purpose of This Documentation Log:
+This file records data quality checks, errors, missing data, exclusions, coordinate systems, processing decisions, and any issues found during the project.
+
+Quality Checks to Record During the Project:
+1. Dataset name
+2. Source website
+3. Download or access date
+4. Coordinate system or EPSG code
+5. Number of features, rows, bands, or raster cells where possible
+6. Missing data or cloud cover issues
+7. Processing steps completed
+8. Any data excluded and why
+9. Final output file name
+
+Notes:
+This file will be updated throughout the project.
+
+
+QUALITY LOG ENTRY 1
+
+Dataset Name:
+Kenya Boundary - FAO GAUL 2015 Level 0
+
+File Name:
+Boundary_GAUL_Kenya_2015
+
+Data Source:
+Google Earth Engine Data Catalog
+
+Dataset ID:
+FAO/GAUL/2015/level0
+
+Date Accessed:
+15 May 2026
+
+Coordinate System:
+WGS 84
+
+EPSG Code:
+EPSG:4326
+
+Data Type:
+FeatureCollection / Administrative boundary
+
+Processing Done:
+The global FAO GAUL Level 0 country boundary dataset was filtered in Google Earth Engine to select Kenya only using ADM0_NAME = Kenya.
+
+Quality Check:
+The Kenya boundary loaded successfully in Google Earth Engine.
+The map centered correctly on Kenya.
+The boundary displayed correctly on the map.
+
+Known Issues:
+The boundary appeared with a dark fill instead of outline only. This is only a display style issue and will be corrected later when adding rainfall and NDVI layers.
+
+Limitations:
+The FAO GAUL 2015 boundary may not reflect the most recent administrative boundary updates. It is suitable for national-level study area definition but not legal boundary decisions.
+
+Status:
+Dataset accepted for use as the Project 6 study area boundary.
+
+
+
+QUALITY LOG ENTRY 2
+
+Dataset Name:
+Kenya Administrative Boundaries - FAO GAUL 2015 Level 1
+
+File Name:
+Boundary_GAUL_Kenya_Admin1_2015
+
+Data Source:
+Google Earth Engine Data Catalog
+
+Dataset ID:
+FAO/GAUL/2015/level1
+
+Date Accessed:
+15 May 2026
+
+Coordinate System:
+WGS 84
+
+EPSG Code:
+EPSG:4326
+
+Data Type:
+FeatureCollection / Administrative boundary
+
+Processing Done:
+The FAO GAUL Level 1 administrative boundary dataset was filtered in Google Earth Engine to select Kenya only using ADM0_NAME = Kenya.
+The boundaries were displayed as thin internal administrative boundary lines using ee.Image().byte().paint().
+
+Quality Check:
+The Kenya national boundary displayed successfully as a clean black outline.
+The internal administrative boundaries displayed successfully inside Kenya.
+The Console displayed the Kenya administrative boundary dataset information.
+
+Known Issues:
+The FAO GAUL Level 1 boundaries may not perfectly match official current Kenya county boundaries. This dataset is acceptable for learning and general national-level climate analysis, but may later be replaced with official county boundaries if needed.
+
+Limitations:
+The dataset is from 2015 and may not represent the most updated administrative boundaries.
+It should not be used for legal boundary decisions.
+
+Status:
+Dataset accepted for use as a general internal administrative boundary layer for Project 6.
+
+
+
+QUALITY LOG ENTRY 3
+
+Dataset Name:
+CHIRPS Annual Rainfall for Kenya 2023
+
+File Name:
+Precipitation_CHIRPS_Kenya_2023
+
+Data Source:
+Google Earth Engine Data Catalog / CHIRPS Daily Precipitation
+
+Dataset ID:
+UCSB-CHG/CHIRPS/DAILY
+
+Date Accessed:
+15 May 2026
+
+Coordinate System:
+WGS 84
+
+EPSG Code:
+EPSG:4326
+
+Data Type:
+Raster climate dataset / precipitation image
+
+Band Used:
+precipitation
+
+Unit:
+Millimeters
+
+Processing Done:
+Daily CHIRPS rainfall images were filtered from 2023-01-01 to 2023-12-31.
+The daily rainfall images were summed to create an annual rainfall raster for 2023.
+The annual rainfall raster was clipped to the Kenya national boundary.
+The raster was displayed in Google Earth Engine using a rainfall color palette.
+
+Quality Check:
+The rainfall raster displayed successfully over Kenya.
+The raster was clipped to the Kenya boundary.
+Kenya national and administrative boundaries displayed correctly above the rainfall layer.
+The Console displayed the annual rainfall image information.
+
+Issue Found:
+The first script caused a Console error because the full CHIRPS daily image collection was printed.
+The error message said the collection query was aborted after accumulating over 5000 elements.
+
+Correction Made:
+The script was corrected by printing only the CHIRPS dataset ID, the annual rainfall image, Kenya boundary, and the number of daily images used for 2023.
+
+Known Limitations:
+CHIRPS rainfall values are gridded estimates.
+The dataset is suitable for national and regional drought analysis but not exact site-level rainfall measurement.
+Rainfall uncertainty may be higher in areas with fewer ground rainfall stations.
+
+Status:
+Dataset accepted for use in Project 6 rainfall and drought analysis.
+
+
+
+QUALITY LOG ENTRY 4
+
+Dataset Name:
+Sentinel-2 NDVI for Kenya 2023
+
+File Name:
+Vegetation_NDVI_Sentinel2_Kenya_2023
+
+Data Source:
+Google Earth Engine Data Catalog / Sentinel-2 Surface Reflectance Harmonized
+
+Dataset ID:
+COPERNICUS/S2_SR_HARMONIZED
+
+Date Accessed:
+15 May 2026
+
+Coordinate System:
+WGS 84
+
+EPSG Code:
+EPSG:4326
+
+Data Type:
+Raster remote sensing dataset / vegetation index image
+
+Bands Used:
+Band 8:
+Near Infrared
+
+Band 4:
+Red
+
+Output Band:
+NDVI_2023
+
+Processing Done:
+Sentinel-2 Surface Reflectance Harmonized imagery was filtered to the Kenya boundary.
+Images were filtered from 2023-01-01 to 2023-12-31.
+Images with CLOUDY_PIXEL_PERCENTAGE less than 20 percent were selected.
+A median composite image was created.
+NDVI was calculated using Band 8 and Band 4.
+The NDVI raster was clipped to the Kenya boundary.
+The NDVI layer was displayed using a vegetation color palette.
+
+Quality Check:
+The Sentinel-2 image collection loaded successfully.
+The NDVI raster displayed successfully over Kenya.
+Kenya national and administrative boundaries displayed above the NDVI layer.
+The Console printed the number of Sentinel-2 images used.
+The NDVI colors appeared reasonable, with low vegetation shown in brown/yellow and healthier vegetation shown in green.
+
+Known Issues:
+Some cloud or atmospheric effects may still remain even after filtering images with less than 20 percent cloud cover.
+Because the layer is a yearly median composite, it may smooth out seasonal vegetation differences.
+
+Limitations:
+NDVI shows vegetation greenness but does not directly measure crop yield, food insecurity, or exact drought impact.
+NDVI interpretation should be combined with rainfall data and local knowledge.
+The 2023 NDVI layer is suitable for national and regional vegetation stress analysis, not detailed farm-level decisions.
+
+Status:
+Dataset accepted for use in Project 6 vegetation health and drought stress analysis.
+
+
+
+QUALITY LOG ENTRY 5
+
+Dataset Name:
+NDVI Vegetation Stress Classes for Kenya 2023
+
+File Name:
+Vegetation_NDVI_Stress_Class_Kenya_2023
+
+Data Source:
+Google Earth Engine Data Catalog / Sentinel-2 Surface Reflectance Harmonized
+
+Dataset ID:
+COPERNICUS/S2_SR_HARMONIZED
+
+Date Accessed:
+15 May 2026
+
+Coordinate System:
+WGS 84
+
+EPSG Code:
+EPSG:4326
+
+Data Type:
+Classified raster remote sensing dataset
+
+Input Dataset:
+Sentinel-2 NDVI for Kenya 2023
+
+Output Band:
+NDVI_Stress_Class
+
+Classification Used:
+Class 1:
+Very low vegetation / severe stress
+
+Class 2:
+Low vegetation / moderate stress
+
+Class 3:
+Moderate vegetation
+
+Class 4:
+Healthy vegetation
+
+Class 5:
+Very healthy vegetation
+
+Processing Done:
+Sentinel-2 NDVI was calculated from Band 8 and Band 4.
+The NDVI raster was reclassified into five vegetation stress classes.
+The classified raster was clipped to the Kenya boundary.
+The classified raster was masked so values only appeared inside Kenya.
+Kenya national and administrative boundaries were displayed above the classified layer.
+
+Quality Check:
+The classified NDVI vegetation stress layer displayed successfully.
+The first display showed unwanted color outside Kenya.
+The issue was corrected using clip and updateMask.
+The final layer displayed only within the Kenya boundary.
+The class colors appeared reasonable for vegetation stress interpretation.
+
+Issue Found:
+The first classified NDVI output displayed a solid green color outside Kenya.
+
+Correction Made:
+The classified NDVI raster was clipped to Kenya and masked using the NDVI raster mask.
+
+Known Limitations:
+The NDVI class thresholds are general and may not perfectly represent vegetation stress in every ecological zone.
+NDVI can be affected by clouds, seasonal timing, soil brightness, water, and land cover type.
+This layer should be interpreted together with rainfall data and local context.
+
+Status:
+Dataset accepted for use in Project 6 vegetation stress and drought priority mapping.
+
+
+QUALITY LOG ENTRY 6
+
+Dataset Name:
+Combined Drought Stress Priority for Kenya 2023
+
+File Name:
+Drought_Stress_CHIRPS_NDVI_Kenya_2023
+
+Data Sources:
+1. CHIRPS Daily Precipitation
+2. Sentinel-2 Surface Reflectance Harmonized
+
+Dataset IDs:
+UCSB-CHG/CHIRPS/DAILY
+COPERNICUS/S2_SR_HARMONIZED
+
+Date Accessed:
+15 May 2026
+
+Coordinate System:
+WGS 84
+
+EPSG Code:
+EPSG:4326
+
+Data Type:
+Classified raster decision-support layer
+
+Input Layers:
+1. Rainfall_Class
+2. NDVI_Stress_Class
+
+Output Band:
+Drought_Stress_Class
+
+Classification Used:
+Class 1:
+Very high drought stress priority
+
+Class 2:
+High drought stress priority
+
+Class 3:
+Moderate drought stress priority
+
+Class 4:
+Low drought stress priority
+
+Class 5:
+Very low drought stress priority
+
+Processing Done:
+CHIRPS daily rainfall images were summed to create annual rainfall for Kenya 2023.
+Annual rainfall was classified into five rainfall condition classes.
+Sentinel-2 imagery was used to calculate NDVI for Kenya 2023.
+NDVI was classified into five vegetation stress classes.
+Rainfall class and NDVI stress class values were added to create a combined score.
+The combined score was reclassified into five drought stress priority classes.
+The final raster was clipped and masked to the Kenya boundary.
+Kenya national and administrative boundaries were displayed above the final layer.
+
+Quality Check:
+The combined drought stress layer displayed successfully inside Kenya.
+The output was visually clipped to the Kenya boundary.
+Supporting rainfall and NDVI layers were included in the script but turned off by default.
+The drought stress priority colors appeared correctly:
+Red for very high drought stress priority.
+Orange for high drought stress priority.
+Yellow for moderate drought stress priority.
+Light green and green for lower drought stress priority.
+
+Known Issues:
+The model is simplified because it only combines rainfall and NDVI.
+It does not include social vulnerability, population exposure, crop type, livestock data, soil moisture, water points, or field observations.
+
+Limitations:
+This output should be interpreted as a screening and early-warning layer, not as final ground truth.
+The classification thresholds are general and may not represent all ecological zones equally.
+Further validation would be needed before using the map for operational humanitarian decisions.
+
+Status:
+Dataset accepted as a major Project 6 decision-support output.
+
+
+
+QUALITY LOG ENTRY 7
+
+Output Type:
+Final Map Outputs
+
+Output Folder:
+5_Maps
+
+Maps Created:
+1. Map_1_Drought_Stress_Priority_Kenya_2023.png
+2. Map_2_CHIRPS_Rainfall_Classes_Kenya_2023.png
+3. Map_3_NDVI_Vegetation_Stress_Kenya_2023.png
+4. Map_4_Rainfall_NDVI_Drought_Comparison_Kenya_2023.png
+
+Software Used:
+ArcMap 10.8
+
+Export Format:
+PNG
+
+Export Resolution:
+300 dpi
+
+Coordinate System:
+WGS 84
+
+EPSG Code:
+EPSG:4326
+
+Quality Check Completed:
+All four exported maps were opened and visually checked after export.
+The maps were confirmed not to be blank.
+The maps were confirmed to have readable titles.
+The maps were confirmed to have appropriate legends.
+The maps were confirmed to have source and prepared-by notes.
+The maps were saved in the correct 5_Maps folder.
+
+Known Issues:
+No major export issues found.
+Small layout differences may exist between maps because each map uses a different legend and visual theme.
+
+Status:
+Final map outputs accepted for Project 6 portfolio documentation.
+
+
+
+QUALITY LOG ENTRY 8
+
+Folder Checked:
+2_Data_Processed
+
+Purpose:
+This folder stores the processed raster outputs used for final ArcMap styling, map layout creation, and project interpretation.
+
+Processed Files Confirmed:
+1. Drought_Stress_CHIRPS_NDVI_Kenya_2023.tif
+2. Precipitation_CHIRPS_Class_Kenya_2023.tif
+3. Vegetation_NDVI_Stress_Class_Kenya_2023.tif
+4. README_Data_Processed_Project_6.txt
+
+Processing Summary:
+The rasters were created in Google Earth Engine using CHIRPS rainfall data, Sentinel-2 NDVI, and Kenya boundary clipping.
+The rasters were exported as GeoTIFF files and copied into the processed data folder for final GIS mapping use.
+
+Coordinate System:
+WGS 84
+
+EPSG Code:
+EPSG:4326
+
+Quality Check:
+The processed raster files were copied successfully into 2_Data_Processed.
+The folder contains a README explaining each processed raster.
+The processed files match the outputs used in ArcMap map production.
+
+Known Issues:
+No major file organization issues found.
+The same GeoTIFF files are also stored in 1_Data_Raw for traceability and backup.
+
+Status:
+2_Data_Processed folder accepted as complete for Project 6.

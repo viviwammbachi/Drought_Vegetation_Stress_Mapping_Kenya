@@ -1,0 +1,26 @@
+GOOGLE EARTH ENGINE SETUP NOTES
+
+Project Name:
+Drought-Vegetation-Kenya
+
+Purpose:
+Noncommercial GIS portfolio project for drought and vegetation stress mapping in Kenya.
+
+Main Datasets Planned:
+1. Sentinel-2 imagery for NDVI vegetation analysis
+2. CHIRPS rainfall data for precipitation analysis
+3. Kenya boundary or selected counties for clipping and mapping
+
+Access Platform:
+Google Earth Engine Code Editor
+
+Code Editor URL:
+https://code.earthengine.google.com/
+
+Setup Status:
+Registered
+
+Earth Engine project created successfully using the Google Cloud project named Drought-Vegetation-Kenya.
+
+Notes:
+This project will use Google Earth Engine to access and process free climate and remote sensing datasets before exporting useful outputs for QGIS or ArcMap.

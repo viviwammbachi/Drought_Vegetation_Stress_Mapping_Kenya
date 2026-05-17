@@ -1,0 +1,184 @@
+FINAL DELIVERY CHECKLIST - PROJECT 6
+
+Project Title:
+Drought and Vegetation Stress Mapping in Kenya Using CHIRPS Rainfall and Sentinel-2 NDVI
+
+Prepared by:
+Vivian Mbachi
+
+Date:
+15 May 2026
+
+1. Folder Structure Check
+
+Main folder:
+Project_6_Drought_Vegetation_Stress_Kenya
+
+Required folders:
+1_Data_Raw - Completed
+2_Data_Processed - Completed
+3_Documentation - Completed
+4_Metadata - Completed
+5_Maps - Completed
+6_Output - Completed
+7_Scripts - Completed
+8_Report - Completed
+
+Status:
+Folder structure is complete.
+
+2. File Naming Check
+
+File naming standard used:
+Category_Type_Detail_Year
+
+Examples:
+Drought_Stress_CHIRPS_NDVI_Kenya_2023.tif
+Precipitation_CHIRPS_Class_Kenya_2023.tif
+Vegetation_NDVI_Stress_Class_Kenya_2023.tif
+Map_1_Drought_Stress_Priority_Kenya_2023.png
+
+Status:
+File naming is professional and consistent.
+
+3. Raw Data Check
+
+Folder:
+1_Data_Raw
+
+Files confirmed:
+Drought_Stress_CHIRPS_NDVI_Kenya_2023.tif
+Precipitation_CHIRPS_Class_Kenya_2023.tif
+Vegetation_NDVI_Stress_Class_Kenya_2023.tif
+README_Data_Raw_GEE_Exports.txt
+
+Status:
+Raw data folder is complete.
+
+4. Processed Data Check
+
+Folder:
+2_Data_Processed
+
+Files confirmed:
+Drought_Stress_CHIRPS_NDVI_Kenya_2023.tif
+Precipitation_CHIRPS_Class_Kenya_2023.tif
+Vegetation_NDVI_Stress_Class_Kenya_2023.tif
+README_Data_Processed_Project_6.txt
+
+Status:
+Processed data folder is complete.
+
+5. Documentation Check
+
+Folder:
+3_Documentation
+
+Important files:
+Project_6_Quality_Documentation_Log.txt
+ArcMap_Processing_Notes_Project_6.txt
+Final_Delivery_Checklist_Project_6.txt
+
+Status:
+Documentation folder is complete.
+
+6. Metadata Check
+
+Folder:
+4_Metadata
+
+Metadata files include:
+README_Metadata_Template.txt
+README_Boundary_GAUL_Kenya_2015.txt
+README_Boundary_GAUL_Kenya_Admin1_2015.txt
+README_Precipitation_CHIRPS_Kenya_2023.txt
+README_Vegetation_NDVI_Sentinel2_Kenya_2023.txt
+README_Vegetation_NDVI_Stress_Class_Kenya_2023.txt
+README_Drought_Stress_CHIRPS_NDVI_Kenya_2023.txt
+
+Status:
+Metadata folder is complete.
+
+7. Maps Check
+
+Folder:
+5_Maps
+
+Final maps:
+Map_1_Drought_Stress_Priority_Kenya_2023.png
+Map_2_CHIRPS_Rainfall_Classes_Kenya_2023.png
+Map_3_NDVI_Vegetation_Stress_Kenya_2023.png
+Map_4_Rainfall_NDVI_Drought_Comparison_Kenya_2023.png
+README_Maps_Project_6.txt
+
+Status:
+Maps folder is complete.
+
+8. Output Check
+
+Folder:
+6_Output
+
+Main output:
+ArcMap_Project_6_Drought_Vegetation_Stress_Kenya.mxd
+
+Status:
+Output folder is complete.
+
+9. Scripts Check
+
+Folder:
+7_Scripts
+
+Script documentation:
+GEE_Setup_Notes_Project_6.txt
+GEE_Script_Inventory_Project_6.txt
+
+Status:
+Scripts folder is complete.
+
+10. Report Check
+
+Folder:
+8_Report
+
+Report files:
+Project_6_Drought_Vegetation_Stress_Kenya_Report.docx
+README_Report_Project_6.txt
+
+Status:
+Report folder is complete.
+
+11. CRS Check
+
+Coordinate system used:
+WGS 84
+
+EPSG code:
+EPSG:4326
+
+Status:
+CRS documented.
+
+12. Final Review
+
+Can a stranger open this project and understand it without asking the project owner?
+Yes.
+
+Are folders named clearly?
+Yes.
+
+Are files named professionally?
+Yes.
+
+Are maps exported and checked?
+Yes.
+
+Are metadata files included?
+Yes.
+
+Are limitations documented?
+Yes.
+
+Final Status:
+Project 6 is ready for final review, GitHub upload, and portfolio presentation.
