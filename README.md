@@ -1,72 +1,84 @@
-# Drought and Vegetation Stress Mapping in Kenya Using CHIRPS Rainfall and Sentinel-2 NDVI
+# Drought and Vegetation Stress Mapping in Kenya
 
-**Prepared by:** Vivian Mbachi  
-**Project Type:** GIS Portfolio Project / Climate and Remote Sensing Analysis  
-**Study Area:** Kenya  
-**Year:** 2026  
+**Remote-sensing analysis combining CHIRPS rainfall and Sentinel-2 NDVI to screen drought-stress priority areas across Kenya in 2023.**
 
-## Project Summary
+![Drought stress priority map of Kenya](5_Maps/Map_1_Drought_Stress_Priority_Kenya_2023.png)
 
-This project uses free climate and remote sensing data to map rainfall conditions, vegetation health, and drought stress priority areas in Kenya for 2023.
+## Project at a glance
 
-CHIRPS rainfall data was used to analyze rainfall conditions, Sentinel-2 imagery was used to calculate NDVI vegetation condition, and both indicators were combined to create a drought stress priority map.
+| | |
+|---|---|
+| **Decision question** | Where did low rainfall and vegetation stress overlap in Kenya during 2023? |
+| **Study area** | Kenya |
+| **Tools** | Google Earth Engine and ArcMap 10.8 |
+| **Data** | CHIRPS precipitation, Sentinel-2 surface reflectance, and FAO GAUL boundaries |
+| **Outputs** | Four thematic maps, processed rasters, documentation, metadata, and a report |
 
-The project demonstrates a practical workflow using Google Earth Engine for raster processing and ArcMap 10.8 for final map layout production.
+## The challenge
 
-## Main Tools Used
+Rainfall deficits and vegetation condition provide complementary views of drought stress. This project combines both indicators to create a national screening product that can support early discussion and help focus more detailed local assessment.
 
-- Google Earth Engine
-- ArcMap 10.8
-- Microsoft Word
-- Git and GitHub
+## Workflow
 
-## Main Data Sources
+1. Prepared Kenya's analysis boundary in Google Earth Engine.
+2. processed CHIRPS rainfall data for the 2023 study period.
+3. processed Sentinel-2 imagery and calculated NDVI as a vegetation-condition indicator.
+4. Clipped, classified, and exported the rainfall and NDVI raster outputs.
+5. Combined the classified indicators into a drought-stress priority layer.
+6. Styled the rasters and prepared final layouts in ArcMap 10.8.
+7. Documented data sources, methods, metadata, and quality considerations.
 
-- CHIRPS Daily Precipitation
-- Sentinel-2 Surface Reflectance Harmonized
-- FAO GAUL Administrative Boundaries
+## Featured maps
 
-## Skills Demonstrated
+| Rainfall conditions | Vegetation stress |
+|:---:|:---:|
+| ![CHIRPS rainfall classes](5_Maps/Map_2_CHIRPS_Rainfall_Classes_Kenya_2023.png) | ![Sentinel-2 NDVI vegetation stress](5_Maps/Map_3_NDVI_Vegetation_Stress_Kenya_2023.png) |
 
-- Google Earth Engine basics
-- Remote sensing
-- Sentinel-2 imagery processing
-- NDVI analysis
+| Combined drought-stress priority | Indicator comparison |
+|:---:|:---:|
+| ![Combined drought stress priority](5_Maps/Map_1_Drought_Stress_Priority_Kenya_2023.png) | ![Rainfall, NDVI and drought comparison](5_Maps/Map_4_Rainfall_NDVI_Drought_Comparison_Kenya_2023.png) |
+
+## Skills demonstrated
+
+- Google Earth Engine raster processing
+- Sentinel-2 imagery preparation and NDVI analysis
 - CHIRPS rainfall analysis
-- Raster clipping and masking
-- Raster reclassification
-- Multi-criteria raster overlay
-- GeoTIFF export
-- ArcMap raster styling and layout design
-- GIS metadata and quality documentation
-- NGO-style climate decision-support mapping
+- Raster masking, clipping, reclassification, and overlay
+- GeoTIFF export and GIS metadata
+- Thematic map design and decision-support reporting
 
-## Final Map Outputs
+## Deliverables
 
-### Map 1: Drought Stress Priority in Kenya, 2023
+- [Final map exports](5_Maps)
+- [Raw input rasters](1_Data_Raw)
+- [Processed raster outputs](2_Data_Processed)
+- [Workflow documentation](3_Documentation)
+- [Metadata](4_Metadata)
+- [Output files](6_Output)
+- [Script inventory and setup notes](7_Scripts)
+- [Project report](8_Report)
 
-![Drought Stress Priority Map](5_Maps/Map_1_Drought_Stress_Priority_Kenya_2023.png)
+## Limitations and responsible use
 
-### Map 2: CHIRPS Rainfall Classes in Kenya, 2023
+- The outputs represent conditions for the selected 2023 analysis period and are not a current drought monitor.
+- NDVI can be affected by seasonality, land cover, clouds, and image-composite choices.
+- Rainfall and vegetation stress do not on their own measure household impacts, water availability, crop loss, or food insecurity.
+- The priority map is a screening product. Local observations and additional climate, livelihood, and hydrological data are required before operational decisions.
 
-![CHIRPS Rainfall Classes Map](5_Maps/Map_2_CHIRPS_Rainfall_Classes_Kenya_2023.png)
-
-### Map 3: NDVI Vegetation Stress in Kenya, 2023
-
-![NDVI Vegetation Stress Map](5_Maps/Map_3_NDVI_Vegetation_Stress_Kenya_2023.png)
-
-### Map 4: Rainfall, Vegetation, and Drought Stress Comparison in Kenya, 2023
-
-![Rainfall NDVI Drought Comparison Map](5_Maps/Map_4_Rainfall_NDVI_Drought_Comparison_Kenya_2023.png)
-
-## Folder Structure
+## Repository structure
 
 ```text
-1_Data_Raw
-2_Data_Processed
-3_Documentation
-4_Metadata
-5_Maps
-6_Output
-7_Scripts
-8_Report
+├── 1_Data_Raw
+├── 2_Data_Processed
+├── 3_Documentation
+├── 4_Metadata
+├── 5_Maps
+├── 6_Output
+├── 7_Scripts
+└── 8_Report
+```
+
+## Author
+
+**Vivian Mbachi** — GIS & Data Analyst, Nairobi, Kenya  
+[GitHub profile](https://github.com/viviwammbachi) · [LinkedIn](https://www.linkedin.com/in/vivianmbachi-gis)
